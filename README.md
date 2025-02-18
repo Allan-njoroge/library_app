@@ -66,7 +66,12 @@ Run the development server:
 Copy
 bin/rails server
 ```
-This command starts both the Rails server and the Tailwind CSS watcher. The application will be available at:
+
+## Running Tests
+To run the tests, use:
+```sh
+rails test
+```
 
 ## Usage
 ### Managing Books
