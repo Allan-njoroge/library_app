@@ -79,20 +79,6 @@ This command starts both the Rails server and the Tailwind CSS watcher. The appl
 7. Viewing Borrowing History
 8. Borrower History
 
-Folder Structure
-```sh
-library_app/
-├── app/                  # Models, views, controllers, and assets
-├── bin/                  # Scripts for running the application
-├── config/               # Application configuration files
-├── db/                   # Database schema and migrations
-├── public/               # Static files
-├── test/                 # Test files
-├── tailwind.config.js    # Tailwind CSS configuration
-├── Gemfile               # Ruby gem dependencies
-├── README.md             # Project documentation
-└── ...                   # Other configuration files
-```
 
 ## Acknowledgments
 - **Ruby on Rails:** For providing a robust framework for building web applications.
