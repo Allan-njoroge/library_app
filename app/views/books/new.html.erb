@@ -1,0 +1,30 @@
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-6">Add New Book</h1>
+
+  <%= form_with model: @book, class: "bg-white shadow-lg rounded-lg p-6" do |form| %>
+    <div class="mb-4">
+      <%= form.label :title, 'Title', class: "block text-gray-700 font-semibold mb-2" %>
+      <%= form.text_field :title, class: "w-full px-4 py-2 border rounded-lg", required: true %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :author, 'Author', class: "block text-gray-700 font-semibold mb-2" %>
+      <%= form.text_field :author, class: "w-full px-4 py-2 border rounded-lg", required: true %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :publish_year, 'Published Year', class: "block text-gray-700 font-semibold mb-2" %>
+      <%= form.number_field :publish_year, class: "w-full px-4 py-2 border rounded-lg", required: true %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :status, 'Status', class: "block text-gray-700 font-semibold mb-2" %>
+      <%= form.select :status, ['available', 'borrowed'], {}, class: "w-full px-4 py-2 border rounded-lg", required: true %>
+    </div>
+
+    <div class="flex space-x-2">
+      <%= form.submit 'Create Book', class: "bg-blue-500 text-white px-4 py-2 rounded" %>
+      <%= link_to 'Cancel', books_path, class: "bg-gray-500 text-white px-4 py-2 rounded" %>
+    </div>
+  <% end %>
+</div>

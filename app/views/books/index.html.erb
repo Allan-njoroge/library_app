@@ -1,0 +1,22 @@
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold mb-6">Library Books</h1>
+
+  <%= link_to 'Add New Book', new_book_path, class: "bg-blue-500 text-white px-4 py-2 rounded mb-4 inline-block" %>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <% @books.each do |book| %>
+      <div class="bg-white shadow-lg rounded-lg p-6">
+        <h2 class="text-xl font-semibold mb-2"><%= book.title %></h2>
+        <p class="text-gray-600 mb-2">By <%= book.author %></p>
+        <p class="text-gray-600 mb-2">Published: <%= book.publish_year %></p>
+        <p class="text-gray-600 mb-4">Status: <span class="font-semibold <%= book.status == 'available' ? 'text-green-600' : 'text-red-600' %>"><%= book.status %></span></p>
+
+        <div class="flex space-x-2">
+          <%= link_to 'View', book_path(book), class: "bg-blue-500 text-white px-4 py-2 rounded" %>
+          <%= link_to 'Edit', edit_book_path(book), class: "bg-yellow-500 text-white px-4 py-2 rounded" %>
+          <%= link_to 'Delete', book_path(book), method: :delete, data: { confirm: 'Are you sure?' }, class: "bg-red-500 text-white px-4 py-2 rounded" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
